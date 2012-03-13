@@ -1,5 +1,7 @@
 from django.conf.urls.defaults import patterns, include, url
 from geoapp.views import main, ajaxmap
+from django.contrib.staticfiles.urls import staticfiles_urlpatterns
+from django.conf import settings
 
 # Uncomment the next two lines to enable the admin:
 # from django.contrib import admin
@@ -17,4 +19,11 @@ urlpatterns = patterns('',
     # url(r'^admin/', include(admin.site.urls)),
     (r'^$', main),
     (r'^ajaxmap/(?P<location>.+)/$', ajaxmap),
+    
 )
+
+urlpatterns += patterns('django.views.static',
+    (r'^static_media/(?P<path>.*)$', 
+        'serve', {
+        'document_root': '/home/watchcat/work/geocoding/geoproj/geoapp/static',
+        'show_indexes': True }),)
