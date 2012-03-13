@@ -15,3 +15,7 @@ def main(request):
 		return direct_to_template(request, 'main.html', context)
 
 	return direct_to_template(request, 'main.html', context)
+
+def ajaxmap(request, location):
+	context = { 'location': location }
+	return direct_to_template(request, 'map.html', context)
