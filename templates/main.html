@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% load easy_maps_tags %}
+
+{% block title %}The current time{% endblock %}
+
+{% block content %}
+
+	<form method="post">
+      {% csrf_token %}
+      <table>
+        {{ form }}
+        <tr>
+          <td colspan="2">
+            <input type="submit" name="Show" value="Show map"/>
+          </td>
+        </tr>
+      </table>
+    </form>
+
+Map for {{ location }}
+<!-- Default map with 300x400 dimensions -->
+{% easy_map location 800 600 %}
+
+
+
+{% endblock %}

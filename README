@@ -1,0 +1,6 @@
+Sample eocoding app
+
+External apps:
+
+pip install geopy
+pip install django-easy-maps
