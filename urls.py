@@ -25,5 +25,5 @@ urlpatterns = patterns('',
 urlpatterns += patterns('django.views.static',
     (r'^static_media/(?P<path>.*)$', 
         'serve', {
-        'document_root': '/home/watchcat/work/geocoding/geoproj/geoapp/static',
+        'document_root': '/home/watchcat/work/geoproj/geoapp/static',
         'show_indexes': True }),)

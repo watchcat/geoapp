@@ -1,0 +1,43 @@
+
+body {
+	margin: 0;
+	padding: 0;
+	background-image: url(../img/bg.jpg);
+}
+
+.content {
+	width: 800px;
+	margin: 2em auto;
+}
+
+.content .formee #location {
+	width: 690px;
+	margin: 0 5px 0 0;
+}
+
+.content .formee #search {
+	width: 100px;
+	margin: 0;
+}
+
+form div { position: relative; }
+.content .formee label {
+	position:absolute;
+	top:1px;
+	left:1px;
+	font-size: 1.4em;
+	line-height: 1.1em;
+	margin: 0;
+	padding: 10px;
+}
+
+#result {
+	margin-top: 2em;
+	width: 100%;
+	display: none;
+}
+
+.loading {
+	height: 15px;
+	background: transparent url(../img/preloader.gif) scroll no-repeat center top;
+}
