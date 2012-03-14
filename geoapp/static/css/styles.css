@@ -12,12 +12,12 @@ body {
 
 .content .formee #location {
 	width: 690px;
-	margin: 0 5px 0 0;
+	margin: 0 5px 0 0 !important;
 }
 
 .content .formee #search {
-	width: 100px;
-	margin: 0;
+	width: 105px;
+	margin: 0 !important;
 }
 
 form div { position: relative; }
