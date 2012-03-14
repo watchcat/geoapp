@@ -1,5 +1,5 @@
 from django.conf.urls.defaults import patterns, include, url
-from geoapp.views import main, ajaxmap
+from geoapp.views import main, ajaxmap, autocomplete
 from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 from django.conf import settings
 
@@ -19,6 +19,7 @@ urlpatterns = patterns('',
     # url(r'^admin/', include(admin.site.urls)),
     (r'^$', main),
     (r'^ajaxmap/(?P<location>.+)/$', ajaxmap),
+    (r'^autocomplete/(?P<word>.+)/$', autocomplete),
     
 )
 
