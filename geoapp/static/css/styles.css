@@ -35,9 +35,14 @@ form div { position: relative; }
 	margin-top: 2em;
 	width: 100%;
 	display: none;
+	width: 800px;
+	height: 600px;
 }
 
-.loading {
+#loading {
+	margin-top: 2em;
+	width: 100%;
+	display: none;
 	height: 15px;
 	background: transparent url(../img/preloader.gif) scroll no-repeat center top;
 }

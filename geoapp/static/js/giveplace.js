@@ -8,13 +8,13 @@ $(function()
 		{
 			source: function(request, callback)
 				{
-					$.getJSON('', request.term, function(data)
+					$.getJSON('/autocomplete/' + encodeURIComponent(request.term), function(data)
 						{
 							var suggestions = [];
 
-							$.each(data, function(i, val)
+							$.each(data.predictions, function(i, val)
 								{
-									suggestions.push(val.name);
+									suggestions.push(val.description);
 								});
 
 							callback(suggestions);
@@ -24,9 +24,11 @@ $(function()
 
 	$('form').submit(function()
 		{
-			var $result = $('#result');
+			var $result = $('#result'),
+				$loading = $('#loading');
 
-			$result.empty().addClass('loading').show();
+			$result.stop().hide();
+			$loading.show();
 
 			$.ajax(
 				{
@@ -34,13 +36,16 @@ $(function()
 					dataType : 'html',
 					success : function(data)
 						{
-							$result.fadeOut('fast', function()
-									{
-										$result
-											.removeClass('loading')
-											.html(data)
-											.fadeIn();
-									});
+							$loading.hide();
+							$result.empty();
+
+							var ifrm = $result[0];
+							ifrm = (ifrm.contentWindow) ? ifrm.contentWindow : (ifrm.contentDocument.document) ? ifrm.contentDocument.document : ifrm.contentDocument;
+							ifrm.document.open();
+							ifrm.document.write(data);
+							ifrm.document.close();
+
+							$result.fadeIn();
 						}
 				});
 

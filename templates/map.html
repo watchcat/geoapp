@@ -1,4 +1,19 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset='utf-8'>
+		<meta content='IE=edge,chrome=1' http-equiv='X-UA-Compatible'>
 
-{% load easy_maps_tags %}
+		<title>{% block title %}{% endblock %}</title>
+		<style>
+			body { margin:0; padding:0; }
+		</style>
+	</head>
+	<body>
 
-{% easy_map location 800 600 %}
+		{% load easy_maps_tags %}
+
+		{% easy_map location 800 600 %}
+
+	</body>
+</html>
